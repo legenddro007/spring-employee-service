@@ -3,11 +3,13 @@ package com.codingshuttle.TestingApp.controllers;
 import com.codingshuttle.TestingApp.dto.EmployeeDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/drovo")
+@RestController
+@RequestMapping("drovo")
 public class ControllerDrovo {
-    @GetMapping("/drovo-info")
+    @GetMapping
     public ResponseEntity<EmployeeDto> getDrovoInfo() {
 
         EmployeeDto drovo = new EmployeeDto();
