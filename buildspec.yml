@@ -1,9 +1,9 @@
-version: 0.2
+version: 0.3
 
 phases:
   install:
     runtime-versions:
-      java: temurin-21
+      java: corretto21
     commands:
       - echo Installing Maven...
   build:
