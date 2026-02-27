@@ -9,14 +9,18 @@ phases:
   build:
     commands:
       - echo Building, Testing and packaging the application...
-      - mvn package -DskipTests
+      - mvn clean package -DskipTests
   post_build:
     commands:
-      - echo Build, Testing and packaging completed.
+      - echo Build completed.
+      - echo Packaging JAR into ZIP for Elastic Beanstalk...
+      - cd target
+      - zip -r spring-app.zip *.jar
+      - cd ..
 
 artifacts:
   files:
-    - target/*.jar
+    - target/spring-app.zip
   discard-paths: yes
 
 cache:
