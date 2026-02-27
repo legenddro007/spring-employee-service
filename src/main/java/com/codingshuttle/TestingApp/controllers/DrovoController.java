@@ -7,16 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("drovo")
-public class ControllerDrovo {
-    @GetMapping
-    public ResponseEntity<EmployeeDto> getDrovoInfo() {
+@RequestMapping("/drovo")
+public class DrovoController {
 
+    @GetMapping("/drovo-info")
+    public ResponseEntity<EmployeeDto> getDrovoInfo() {
+        // return a new EmployeeDto with your info
         EmployeeDto drovo = new EmployeeDto();
         drovo.setName("Mah Dian Drovo");
         drovo.setEmail("mahdian@example.com");
         drovo.setSalary(50000L);
-
         return ResponseEntity.ok(drovo);
     }
+
 }
